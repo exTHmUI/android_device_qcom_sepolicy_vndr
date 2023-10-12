@@ -35,6 +35,7 @@
 
 # Block device for hal_bootctl
 /dev/block/sdf                                                      u:object_r:boot_block_device:s0
+/dev/block/mmcblk0                                                  u:object_r:root_block_device:s0
 
 #emmc node
 /dev/block/platform/soc/7c4000.sdhci/by-name/abl_[ab]          u:object_r:vendor_custom_ab_block_device:s0
@@ -58,6 +59,7 @@
 /dev/block/platform/soc/7c4000.sdhci/by-name/odm_[ab]          u:object_r:system_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/xbl_[ab]          u:object_r:vendor_xbl_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/aop_[ab]          u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/aop_config_[ab]          u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/vbmeta_[ab]       u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/dtbo_[ab]         u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/dsp_[ab]          u:object_r:vendor_custom_ab_block_device:s0
@@ -65,6 +67,7 @@
 /dev/block/platform/soc/7c4000.sdhci/by-name/mdtpsecapp_[ab]   u:object_r:vendor_mdtp_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/qupfw_[ab]        u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/xbl_config_[ab]   u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/xbl_ramdump_[ab]   u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/storsec_[ab]      u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/imagefv_[ab]      u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/uefisecapp_[ab]   u:object_r:vendor_uefi_block_device:s0
@@ -72,6 +75,10 @@
 /dev/block/platform/soc/7c4000.sdhci/by-name/featenabler_[ab]  u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/core_nhlos_[ab]   u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/vbmeta_system_[ab]     u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/shrm_[ab]     u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/cpucp_[ab]     u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/uefi_[ab]             u:object_r:vendor_uefi_block_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/multiimgqti_[ab]      u:object_r:vendor_custom_ab_block_device:s0
 
 #non A/B
 /dev/block/platform/soc/7c4000.sdhci/by-name/system                            u:object_r:system_block_device:s0
@@ -152,3 +159,9 @@
 
 # VM Specific
 /vendor/vm-system(/.*)?              u:object_r:same_process_hal_file:s0
+
+# emmc device rpmb node
+/dev/mmcblk0rpmb                     u:object_r:vendor_rpmb_device:s0
+
+#Graphics dependencies
+/vendor/lib(64)?/libOpenCL_adreno\.so       u:object_r:same_process_hal_file:s0

@@ -24,6 +24,7 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
 persist.vendor.service.bdroid.       u:object_r:vendor_bluetooth_prop:s0
 persist.vendor.bluetooth.            u:object_r:vendor_bluetooth_prop:s0
 ro.vendor.bluetooth.                 u:object_r:vendor_bluetooth_prop:s0
@@ -42,6 +43,7 @@ ctl.vendor.sensors         u:object_r:vendor_sensors_prop:s0
 persist.vendor.sensors.    u:object_r:vendor_sensors_prop:s0
 ro.vendor.sensors.         u:object_r:vendor_sensors_prop:s0
 vendor.audio.              u:object_r:vendor_audio_prop:s0
+vendor.audio.ssr.trigger   u:object_r:vendor_audio_ssr_prop:s0
 vendor.voice.              u:object_r:vendor_audio_prop:s0
 persist.vendor.audio.      u:object_r:vendor_audio_prop:s0
 ro.vendor.audio.           u:object_r:vendor_audio_prop:s0
@@ -158,3 +160,6 @@ vendor.dcvs.prop                 u:object_r:vendor_dcvs_prop:s0
 
 #pcie property
 persist.vendor.pcie. u:object_r:vendor_pcie_prop:s0
+
+#Dynamic sensor
+vendor.dynamic_sensor. u:object_r:vendor_dynamic_sensor_prop:s0
